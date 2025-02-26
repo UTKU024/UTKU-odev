@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metin Aktar</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            background-color: #463e8c;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 24px;
+        }
+        .small-text {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="inputText" value="jQuery">
+    <button id="transferButton">Metni Aktar</button>
+    
+    <h1 id="outputText">jQuery</h1>
+    <h2 id="smallOutputText" class="small-text">jQuery</h2>
+
+    <script>
+        $(document).ready(function() {
+            $("#transferButton").click(function() {
+                let text = $("#inputText").val();
+                $("#outputText").text(text);
+                $("#smallOutputText").text(text);
+            });
+        });
+    </script>
+</body>
+</html>
