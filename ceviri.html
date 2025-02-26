@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dijital Sözlük</title>
+</head>
+<body>
+    <body style="background-color: orange;">
+        <div>
+        <input type="text" id="arananKelime" placeholder="İngilizce Kelime">
+        <input type="button" value="Çevir" onclick="cevir()">
+        <h3 id="turkce" >Kelimenin Türkçe Karşılığı</h3>
+        </div>
+        </body>
+    <script>
+    function translateTurkish() {
+    const turkishWord = document.getElementById("turkishWord").value.toLowerCase();
+    const englishWord = Object.keys(dictionary).find(key => dictionary[key] === turkishWord);
+    
+    const resultElement = document.getElementById("englishTranslation");
+    if (englishWord) {
+        resultElement.textContent = englishWord;
+    } else {
+        resultElement.textContent = "Çeviri bulunamadı.";
+    }
+}
+var ingilizce=["apple","bottle","computer","book","mouse","wall","pen","paper","table"];
+var turkce=["elma","şişe","bilgisayar","kitap","fare","duvar","kalem","kağıt","masa"];
+function cevir(){
+var siraNo;
+siraNo=ingilizce.indexOf(document.getElementById("arananKelime").value);
+if(siraNo>=0){
+document.getElementById("turkce").innerText=turkce[siraNo];
+}
+}
+    </script>
+</body>
+</html>
